@@ -32,7 +32,8 @@ public class OnlineUsersWsHandler implements WsMessageHandler {
                 .sorted()
                 .toList();
 
-        OnlineUsersResponse response = new OnlineUsersResponse(users, users.size());
+        int count = users.size();
+        OnlineUsersResponse response = new OnlineUsersResponse(users, count);
         broadcaster.sendTo(context.session(), response);
     }
 }
